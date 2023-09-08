@@ -8,14 +8,12 @@ buildPage();
 function getCurrentWeather(location) {
     fetch(`https://api.weatherapi.com/v1/current.json?key=8a9102aa8dd74b81b0652208230609&q=${location}`, {mode: 'cors'})
     .then(function(response) {
-        console.log(response);
         return response.json();
     })
     .then(function(response) {
         const city = response.location.name;
         const currentTemp = response.current.temp_c;
         displayCurrent(city, currentTemp);
-        console.log(response.current.condition.text);
         return city
     })
     .catch(function(error) {
@@ -28,6 +26,7 @@ function getCurrentWeather(location) {
 async function getFutureWeather(location) {
     const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=8a9102aa8dd74b81b0652208230609&q=${location}&days=3`, {mode: 'cors'})
     const forecast = await response.json();
+    console.table(forecast.forecast);   
     const t0 = forecast.forecast.forecastday[0].day.maxtemp_c;
     const c0 = forecast.forecast.forecastday[0].day.condition.text;
     const t1 = forecast.forecast.forecastday[1].day.maxtemp_c;

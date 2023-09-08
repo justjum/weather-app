@@ -19,15 +19,15 @@ function displayCurrent(city, temperature) {
     const current = document.getElementById("current");
     current.innerHTML = `
         <h1>${city}</h1>
-        <h2>${temperature}</h2>
+        <h2>${temperature}&degC</h2>
     `
 }
 
 function displayFuture(t0, c0, t1, c1, t2, c2) {
     const future = document.getElementById("future")
     future.innerHTML = `
-        <h3>${t0}C</h3><h3>${c0}</h3>
-        <h3>${t1}</h3><h3>${c1}</h3>
-        <h3>${t2}</h3><h3>${c2}</h3>
+        <div class="day-table" id="today-table"><h3>${t0}&degC</h3><h3>${c0}</h3></div>
+        <div class="day-table" id="tomorrow-table"><h3>${t1}&degC</h3><h3>${c1}</h3></div>
+        <div class="day-table" id="tomorrow-tomorrow-table"<h3>${t2}&degC</h3><h3>${c2}</h3>
     `
 }
