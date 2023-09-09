@@ -14,6 +14,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'Everywhere You Go',
             template: './src/index.html',
+            inject: false
         }),
     ],
     output: {

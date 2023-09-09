@@ -1,7 +1,103 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url(./Fonts/Montserrat-ExtraLight.ttf);
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url(./Fonts/Raleway-VariableFont_wght.ttf);
+}
+
 body {
-    
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat';
+}
+
+.grey-out {
+    background-color: lightslategray;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 3;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.navbar {
+    background-color: rgb(107, 166, 218);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 500px;
+    box-shadow: 5px 5px lightgray;
+}
+
+h1 {
+    margin: 15px;
+}
+
+input, button {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.forecast {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 7px 7px lightblue
+}
+
+.current {
+    background-color: rgb(153, 187, 216);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 30px;
+}
+
+.icon-large {
+    grid-row: 1/3;
+    grid-column: 2/3;
+    width: 100px;
+    align-self: center;
+    justify-self: center;
 }
 
 .day-table {
-    border: 1px, solid, lightblue;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 42px;
+    background-color: aliceblue;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.day-table img {
+    width: 40px;
+    height: 40px;
+}
+
+.popup-box {
+    position: absolute;
+    background-color: white;
+    top: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    flex-direction: column;
+    width: 150px;
+    box-shadow: 5px 5px lightgray;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
 }
