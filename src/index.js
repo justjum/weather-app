@@ -3,6 +3,7 @@ import { displayCurrent, displayFuture, buildPage } from './build-page.js'
 
 let errorBox = false;
 let greyout = false;
+let loader = false;
 
 //build main containers in HTML
 buildPage();
@@ -33,9 +34,19 @@ function displayError(error) {
 const okButton = document.getElementById("clear-error");
 okButton.onclick = () => errorViewSwitch()
 
+// function to change loader visibility
+function loaderSwitch() {
+    const loaderDisplay = document.getElementById("loader");
+    loader ? loaderDisplay.setAttribute("style", "display:none"): loaderDisplay.setAttribute("style", "display: inline");
+    loader = !loader;
+}
+
+
 
 //function to fetch current weather data from api using promise
 function getCurrentWeather(location) {
+    greySwitch();
+    loaderSwitch();
     fetch(`https://api.weatherapi.com/v1/current.json?key=8a9102aa8dd74b81b0652208230609&q=${location}`, {mode: 'cors'})
     .then(function(response) {
         return response.json();
@@ -69,6 +80,8 @@ async function getFutureWeather(location) {
     const c2 = forecast.forecast.forecastday[2].day.condition.text;
     const i2 = forecast.forecast.forecastday[2].day.condition.icon;
     displayFuture(t0, c0, i0, t1, c1, i0, t2, c2, i2)
+    loaderSwitch();
+    greySwitch();
 };
 
 

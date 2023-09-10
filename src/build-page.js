@@ -19,6 +19,7 @@ function buildPage() {
             <h3 id="error-text">Insert error here</h3><br>
             <button id="clear-error">Ooops!</button>
         </div>
+        <div class="loader" id="loader" style="display: none"></div>
         `;
 }
 
