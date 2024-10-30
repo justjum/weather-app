@@ -3739,7 +3739,7 @@ function loaderSwitch() {
 function getCurrentWeather(location) {
     greySwitch();
     loaderSwitch();
-    fetch(`https://api.weatherapi.com/v1/current.json?key=8a9102aa8dd74b81b0652208230609&q=${location}`, {mode: 'cors'})
+    fetch(`https://api.weatherapi.com/v1/current.json?key=633ce015b84944088b3222114242910&q=${location}`, {mode: 'cors'})
     .then(function(response) {
         return response.json();
     })
