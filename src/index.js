@@ -53,7 +53,7 @@ function getCurrentWeather(location) {
     })
     .then(function(response) {
         const city = response.location.name;
-        console.log(response.location);
+        console.log(response);
         const country = response.location.country;
         const currentTemp = response.current.temp_c;
         const icon = response.current.condition.icon;
@@ -68,7 +68,7 @@ function getCurrentWeather(location) {
 // function to fetch future weather data from api using async function
 
 async function getFutureWeather(location) {
-    const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=8a9102aa8dd74b81b0652208230609&q=${location}&days=3`, {mode: 'cors'})
+    const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=633ce015b84944088b3222114242910&q=${location}&days=3`, {mode: 'cors'})
     const forecast = await response.json();  
     const t0 = forecast.forecast.forecastday[0].day.maxtemp_c;
     const c0 = forecast.forecast.forecastday[0].day.condition.text;
