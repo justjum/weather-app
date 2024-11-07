@@ -8,8 +8,9 @@ function buildPage() {
     content.innerHTML = `
         <div class="navbar" id="navbar">
             <h1>Where are you going?</h1>
+
             <input type="textbox" class="location" id="location">
-            <button type="submit" class="search-button" id="search-button">Let's Go!</button>
+
         </div>
         <div class="forecast" id="forecast">
             <div class="current" id="current"></div>
